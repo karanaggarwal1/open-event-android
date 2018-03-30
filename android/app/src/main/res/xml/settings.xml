@@ -21,20 +21,10 @@
         <ListPreference
             android:defaultValue="@string/default_mode_notification"
             android:dialogTitle="@string/settings_mode_notification"
-            android:title="@string/notification_interval_title"
             android:entries="@array/notification_mode_values"
             android:entryValues="@array/notification_mode_values"
-            android:key="@string/notification_key" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="change_language_category"
-        android:title="@string/language_preferences">
-
-        <Preference
-            android:defaultValue="@string/default_mode_language"
-            android:key="@string/language_key"
-            android:title="@string/change_language" />
+            android:key="@string/notification_key"
+            android:title="@string/notification_interval_title" />
     </PreferenceCategory>
 
 </PreferenceScreen>

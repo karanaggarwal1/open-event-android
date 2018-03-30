@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".activities.SessionDetailActivity"
+    tools:context=".core.track.session.SessionDetailActivity"
     tools:showIn="@layout/activity_sessions_detail">
 
     <LinearLayout
@@ -34,12 +34,11 @@
                     android:layout_marginBottom="@dimen/layout_margin_medium"
                     android:textColor="@color/primary_text" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <GridLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/layout_margin_medium"
-                    android:columnCount="2"
-                    android:orientation="horizontal"
+                    android:columnCount="3"
+                    android:padding="10dp"
                     android:rowCount="5">
 
                     <TextView
@@ -54,21 +53,61 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dot_session"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/track"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/layout_margin_extra_large"
-                        android:layout_marginStart="@dimen/layout_margin_extra_large"
-                        android:layout_toEndOf="@+id/trak"
-                        android:layout_toRightOf="@id/trak"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_large" />
+
+                    <TextView
+                        android:id="@+id/type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/layout_margin_medium"
+                        android:layout_marginRight="30dp"
+                        android:text="@string/type"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_columnSpan="2"
+                        android:id="@+id/typeLayout"
+                        android:visibility="gone"
+                        android:layout_rowSpan="1">
+
+                        <TextView
+                            android:id="@+id/dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dot_session"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/text_size_large"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/sessionType"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/text_size_large" />
+
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/track"
                         android:layout_marginEnd="@dimen/layout_margin_medium"
                         android:layout_marginRight="@dimen/layout_margin_medium"
                         android:text="@string/date"
@@ -76,71 +115,76 @@
                         android:textSize="@dimen/text_size_large"
                         android:textStyle="bold" />
 
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dot_session"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+
                     <TextView
                         android:id="@+id/date_session"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/track"
-                        android:layout_marginLeft="@dimen/layout_margin_extra_large"
-                        android:layout_marginStart="@dimen/layout_margin_extra_large"
-                        android:layout_toEndOf="@id/date"
-                        android:layout_toRightOf="@id/date"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_large" />
 
+
                     <TextView
-                        android:id="@+id/start"
+                        android:id="@+id/duration"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/date_session"
                         android:layout_marginEnd="@dimen/layout_margin_medium"
                         android:layout_marginRight="@dimen/layout_margin_medium"
-                        android:text="@string/start_time"
+                        android:text="@string/duration"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_large"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/start_time_session"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/date_session"
-                        android:layout_marginLeft="@dimen/layout_margin_medium"
-                        android:layout_marginStart="@dimen/layout_margin_medium"
-                        android:layout_toEndOf="@id/start"
-                        android:layout_toRightOf="@id/start"
-                        android:textColor="@color/primary_text"
-                        android:textSize="@dimen/text_size_large" />
-
-                    <TextView
-                        android:id="@+id/end"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/start_time_session"
-                        android:layout_marginEnd="@dimen/layout_margin_medium"
-                        android:layout_marginRight="@dimen/layout_margin_medium"
-                        android:text="@string/end_time"
+                        android:text="@string/dot_session"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_large"
                         android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/end_time_session"
+                    <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/start_time_session"
-                        android:layout_marginLeft="@dimen/layout_margin_large"
-                        android:layout_marginStart="@dimen/layout_margin_large"
-                        android:layout_toEndOf="@id/end"
-                        android:layout_toRightOf="@id/end"
-                        android:textColor="@color/primary_text"
-                        android:textSize="@dimen/text_size_large" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/start_time_session"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/text_size_large" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/dash"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/text_size_large"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/end_time_session"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/primary_text"
+                            android:textSize="@dimen/text_size_large" />
+                    </LinearLayout>
+
 
                     <TextView
                         android:id="@+id/location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/end_time_session"
                         android:layout_marginEnd="@dimen/layout_margin_medium"
                         android:layout_marginRight="@dimen/layout_margin_medium"
                         android:text="@string/location"
@@ -149,23 +193,28 @@
                         android:textStyle="bold" />
 
                     <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dot_session"
+                        android:textColor="@color/primary_text"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/tv_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/end_time_session"
-                        android:layout_marginLeft="@dimen/layout_margin_large"
-                        android:layout_marginStart="@dimen/layout_margin_large"
-                        android:layout_toEndOf="@id/location"
-                        android:layout_toRightOf="@id/location"
+                        android:layout_marginRight="60dp"
+                        android:paddingRight="20dp"
                         android:textColor="@color/primary_text"
                         android:textSize="@dimen/text_size_large" />
-                </RelativeLayout>
+                </GridLayout>
 
                 <android.support.v7.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/layout_margin_large"
-                    android:layout_gravity="center">
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/layout_margin_large">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -175,17 +224,17 @@
                             android:id="@+id/iv_youtube_view"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:visibility="gone"
-                            android:scaleType="fitCenter"/>
+                            android:scaleType="fitCenter"
+                            android:visibility="gone" />
 
                         <ImageButton
                             android:id="@+id/watch"
+                            style="?borderlessButtonStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_play"
                             android:layout_centerInParent="true"
                             android:visibility="gone"
-                            style="?borderlessButtonStyle" />
+                            app:srcCompat="@drawable/ic_play" />
 
                     </RelativeLayout>
 
@@ -194,8 +243,8 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/list_speakers"
                     android:layout_width="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:clipToPadding="false"
                     android:paddingBottom="@dimen/padding_medium"
                     android:paddingTop="@dimen/padding_medium"
@@ -230,3 +279,5 @@
             android:textIsSelectable="true" />
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>
+
+
